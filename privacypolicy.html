@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Wealth Blueprint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9fafb, #eef2ff);
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1e40af;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            position: relative;
+            z-index: 2;
+            animation: slideDown 1s ease-out;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid #1e40af;
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background: #eff6ff;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #1e40af;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        button {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Privacy Policy & Terms</h1>
+    </header>
+
+    <section>
+        <h2>Privacy Policy</h2>
+        <p>At <strong>Wealth Blueprint</strong>, accessible from <a href="https://wealthblueprint.in"
+                target="_blank">https://wealthblueprint.in</a>, we respect your privacy and are committed to protecting
+            your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when
+            you visit our website.</p>
+
+        <p>We may collect information such as your name, email address, and usage data to provide and improve our
+            services. We do not sell, trade, or rent users’ personal information to others. Cookies are used to enhance
+            user experience and analyze website performance.</p>
+
+        <p>By using our website, you consent to our Privacy Policy and agree to its terms.</p>
+    </section>
+
+    <section>
+        <h2>Terms and Conditions</h2>
+        <p>Welcome to Wealth Blueprint! These Terms and Conditions outline the rules and regulations for using our
+            website.</p>
+        <p>By accessing this website, you accept these terms in full. Do not continue to use Wealth Blueprint if you do
+            not agree to all of the terms and conditions stated here.</p>
+        <p>You may not use our website for any unlawful or prohibited activities. The content on this website is for
+            informational purposes only and should not be considered financial advice. We reserve the right to modify or
+            terminate any part of the website without notice.</p>
+    </section>
+
+    <section>
+        <h2>Contact Us</h2>
+        <div class="contact">
+            <p>If you have any questions about this Privacy Policy or our Terms, please contact us:</p>
+            <p>📧 Email: <a href="mailto:contact@wealthblueprint.in">contact@wealthblueprint.in</a><br>
+                📍 Address: Sector 62, Noida, Uttar Pradesh, India</p>
+            <p>We aim to respond to all inquiries within 24–48 hours.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Disclaimer</h2>
+        <p>The information provided by Wealth Blueprint is for general informational and educational purposes only. All
+            information on the site is provided in good faith; however, we make no representation or warranty of any
+            kind regarding accuracy, adequacy, validity, reliability, or completeness.</p>
+
+        <p>Under no circumstance shall we have any liability for any loss or damage incurred as a result of using this
+            website or reliance on any information provided. Your use of the website and reliance on any information is
+            solely at your own risk.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Wealth Blueprint | All Rights Reserved</p>
+        <button>
+            <a href="index.html" style="color: white; text-decoration: none;">Back to Website</a>
+        </button>
+    </footer>
+
+
+    <script>
+        // Smooth fade-in animation for sections
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(sec => {
+            sec.style.opacity = 0;
+            sec.style.transform = 'translateY(30px)';
+            sec.style.transition = 'all 0.8s ease';
+            observer.observe(sec);
+        });
+    </script>
+</body>
+
+</html>

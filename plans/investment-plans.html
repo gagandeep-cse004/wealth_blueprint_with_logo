@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Plans | Strategic Wealth Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f5f9ff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, #007bff, #00c6ff);
+            color: #fff;
+            padding: 90px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
+            animation: rotateLight 10s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        @keyframes rotateLight {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .intro {
+            margin-bottom: 60px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro h2 {
+            color: #007bff;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* INVESTMENT PLANS */
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            justify-items: center;
+            animation: fadeUp 1.2s ease forwards;
+        }
+
+        .investment-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            width: 100%;
+            max-width: 340px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .investment-card::before {
+            content: "";
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(0, 123, 255, 0.08), transparent 70%);
+            transition: opacity 0.4s;
+            opacity: 0;
+        }
+
+        .investment-card:hover::before {
+            opacity: 1;
+        }
+
+        .investment-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2);
+        }
+
+        .investment-card .icon img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+            transition: transform 0.5s;
+        }
+
+        .investment-card:hover .icon img {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .investment-card h3 {
+            color: #007bff;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .investment-card p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        .investment-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .investment-card ul li {
+            color: #444;
+            font-size: 0.9rem;
+            margin: 8px 0;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .investment-card ul li::before {
+            content: "✔";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .plan-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #007bff, #00c6ff);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        .plan-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+        }
+
+        .featured {
+            border: 2px solid #007bff;
+            background: linear-gradient(to bottom, #ffffff, #f0f8ff);
+            transform: scale(1.05);
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-block;
+            margin: 60px auto 0;
+            padding: 14px 36px;
+            background: linear-gradient(90deg, #007bff, #00c6ff);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+            animation: floaty 2.8s ease-in-out infinite;
+        }
+
+        @keyframes floaty {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Investment Planning & Wealth Growth</h1>
+        <p>
+            Create a personalized investment portfolio that matches your goals, risk tolerance, and time horizon —
+            designed for long-term wealth success.
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Smart. Strategic. Secure.</h2>
+            <p>
+                Investment planning is not about chasing quick returns — it’s about building a solid foundation that
+                grows sustainably. Our advisors help you identify the right mix of assets, manage risk efficiently, and
+                stay aligned with your financial vision.
+            </p>
+        </div>
+
+        <div class="investment-grid">
+            <div class="investment-card">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5569/5569382.png" alt="Starter Plan" />
+                </div>
+                <h3>Starter Plan</h3>
+                <p>Perfect for new investors looking to start their financial journey with steady, reliable returns.</p>
+                <ul>
+                    <li>Mutual funds & SIPs</li>
+                    <li>Low-risk government bonds</li>
+                    <li>Monthly review reports</li>
+                </ul>
+                <a href="#" class="plan-btn">Explore Starter Plan →</a>
+            </div>
+
+            <div class="investment-card featured">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10007/10007967.png" alt="Growth Plan" />
+                </div>
+                <h3>Growth Plan</h3>
+                <p>Designed for professionals aiming for aggressive returns with balanced diversification.</p>
+                <ul>
+                    <li>Equity & hybrid portfolios</li>
+                    <li>Goal-based tracking tools</li>
+                    <li>Quarterly risk analysis</li>
+                </ul>
+                <a href="#" class="plan-btn">Explore Growth Plan →</a>
+            </div>
+
+            <div class="investment-card">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4767/4767029.png" alt="Elite Plan" />
+                </div>
+                <h3>Elite Plan</h3>
+                <p>Exclusive portfolio for high-net-worth individuals focusing on global diversification and tax
+                    efficiency.</p>
+                <ul>
+                    <li>Global equity + private funds</li>
+                    <li>Dedicated wealth advisor</li>
+                    <li>Estate & tax optimization</li>
+                </ul>
+                <a href="#" class="plan-btn">Explore Elite Plan →</a>
+            </div>
+        </div>
+
+        <a href="../services.html" class="back-btn">← Back to Services</a>
+    </div>
+
+    <footer>
+        © 2025 Strategic Wealth Solutions | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>

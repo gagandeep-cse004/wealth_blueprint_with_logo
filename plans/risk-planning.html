@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Risk Planning | Strategic Protection Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(180deg, #f5f9ff, #eaf3ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0066ff, #00c6ff);
+            color: #fff;
+            padding: 90px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.25), transparent 60%);
+            animation: rotateLight 10s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        @keyframes rotateLight {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            z-index: 1;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+
+        .intro.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro h2 {
+            color: #0066ff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .risk-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .risk-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .risk-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .risk-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.25);
+        }
+
+        .risk-card h3 {
+            font-size: 1.4rem;
+            color: #0066ff;
+            margin-bottom: 15px;
+        }
+
+        .risk-card p {
+            font-size: 0.97rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .plan-compare {
+            margin-top: 80px;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 1s ease;
+        }
+
+        .plan-compare h2 {
+            text-align: center;
+            color: #0066ff;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .plan-compare table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .plan-compare th,
+        .plan-compare td {
+            padding: 15px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .plan-compare th {
+            background: #0066ff;
+            color: #fff;
+        }
+
+        .plan-compare tr:hover td {
+            background: #f0f8ff;
+            transition: 0.3s ease;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #0066ff, #00c6ff);
+            color: white;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+            animation: floaty 2.5s ease-in-out infinite;
+        }
+
+        .cta a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 35px rgba(0, 102, 255, 0.5);
+        }
+
+        @keyframes floaty {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            padding: 30px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Risk Planning & Protection Solutions</h1>
+        <p>Safeguard your wealth, income, and legacy from unexpected financial shocks with expert-led protection
+            strategies.</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Why Risk Planning Is Crucial</h2>
+            <p>
+                Whether it’s a health emergency, job loss, or market crash—unforeseen events can derail financial
+                security.
+                Strategic Risk Planning ensures you stay financially strong even in crisis.
+                Our experts evaluate your exposure to different risk types and develop an integrated plan
+                to protect your family, lifestyle, and long-term goals.
+            </p>
+        </div>
+
+        <div class="risk-sections">
+            <div class="risk-card">
+                <h3>🧠 Identify & Assess Risks</h3>
+                <p>We start by understanding your life goals, income stability, dependents, and financial obligations.
+                    This helps identify risks like health uncertainty, business volatility, or loss of income.
+                    Our analytics-driven models prioritize them by severity and impact.</p>
+            </div>
+
+            <div class="risk-card">
+                <h3>🛡️ Structure Protection Plans</h3>
+                <p>After assessment, we recommend the right mix of emergency savings, term insurance,
+                    medical coverage, and asset protection.
+                    These tailored layers ensure your family’s lifestyle remains secure even if you can’t earn
+                    temporarily.</p>
+            </div>
+
+            <div class="risk-card">
+                <h3>💼 Integrate With Wealth Strategy</h3>
+                <p>We align risk coverage with your broader wealth goals—investments, taxation,
+                    retirement, and estate planning.
+                    This ensures balance between protection and growth, not one at the expense of the other.</p>
+            </div>
+        </div>
+
+        <div class="plan-compare">
+            <h2>Compare Our Risk Protection Packages</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Essential</th>
+                        <th>Advanced</th>
+                        <th>Elite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Term Life Insurance</td>
+                        <td>Up to ₹50 L</td>
+                        <td>Up to ₹1 Cr + Rider</td>
+                        <td>Up to ₹3 Cr + Critical Illness</td>
+                    </tr>
+                    <tr>
+                        <td>Health & Disability Cover</td>
+                        <td>Basic Plan</td>
+                        <td>Comprehensive + Add-ons</td>
+                        <td>Premium Global Cover</td>
+                    </tr>
+                    <tr>
+                        <td>Emergency Fund</td>
+                        <td>3 Months Expenses</td>
+                        <td>6 Months Expenses</td>
+                        <td>12 Months + Investment Cushion</td>
+                    </tr>
+                    <tr>
+                        <td>Asset & Liability Protection</td>
+                        <td>Basic Property Insurance</td>
+                        <td>Property + Loan Shield</td>
+                        <td>Full Risk Diversification Plan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cta">
+            <a href="../services.html">← Back to Services</a>
+        </div>
+    </div>
+
+    <footer>© 2025 Strategic Protection Solutions | All Rights Reserved</footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.intro, .risk-card').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>

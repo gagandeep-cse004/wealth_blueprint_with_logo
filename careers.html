@@ -12,9 +12,16 @@
   <div class="container nav-inner">
     <div class="brand">
       <img src="assets/logo.png" alt="Wealth Blue Print logo" class="logo">
-      <span>Wealth Blue Print</span>
+      <span style="color: white;">Wealth Blue Print</span>
     </div>
-    <nav class="nav-links">
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
@@ -23,36 +30,375 @@
     </nav>
   </div>
 </header>
-<main class="container careers">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav {
+    background: #1e40af;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .brand img.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #fbbf24;
+  }
+
+  .nav-links .cta {
+    background: #fbbf24;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links .cta:hover {
+    background: #facc15;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #1e40af;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      display: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+</script>
+
+
+
+<main id="careers-section">
   <h1>Join Our Team</h1>
   <p>Be part of a growing firm that values innovation, learning, and impact.</p>
-  <div class="grid">
+
+  <!-- Toggle Buttons -->
+  <div class="career-tabs">
+    <button class="tab-btn active" onclick="showTab('jobs')">💼 Jobs</button>
+    <button class="tab-btn" onclick="showTab('internships')">🎓 Internships</button>
+  </div>
+
+  <!-- Jobs Section -->
+  <div class="career-cards active" id="jobs">
     <div class="card">
       <h3>Financial Analyst</h3>
-      <p>Analyze financial data and provide insights to support our clients' portfolios.</p>
+      <p>Analyze financial data and provide insights to support client portfolios.</p>
       <a href="contact.html" class="btn">Apply Now</a>
     </div>
+
     <div class="card">
       <h3>Investment Advisor</h3>
       <p>Guide clients through personalized investment strategies.</p>
       <a href="contact.html" class="btn">Apply Now</a>
     </div>
+
     <div class="card">
       <h3>Marketing Associate</h3>
       <p>Help expand our reach and communicate our mission to new audiences.</p>
       <a href="contact.html" class="btn">Apply Now</a>
     </div>
+
+    <div class="card">
+      <h3>Client Relationship Manager</h3>
+      <p>Build and maintain long-term client relationships through strategic support.</p>
+      <a href="contact.html" class="btn">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Internships Section -->
+  <div class="career-cards" id="internships">
+    <div class="card">
+      <h3>Finance Intern</h3>
+      <p>Assist our financial analysts with data management and portfolio research.</p>
+      <a href="contact.html" class="btn">Apply Now</a>
+    </div>
+
+    <div class="card">
+      <h3>Marketing Intern</h3>
+      <p>Support the marketing team with social media campaigns and outreach.</p>
+      <a href="contact.html" class="btn">Apply Now</a>
+    </div>
+
+    <div class="card">
+      <h3>Data Intern</h3>
+      <p>Work with investment data and help develop financial models and insights.</p>
+      <a href="contact.html" class="btn">Apply Now</a>
+    </div>
   </div>
 </main>
+
+<style>
+  /* ===== CAREERS SECTION STYLING ===== */
+  #careers-section {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f7faff, #e3f2fd);
+    text-align: center;
+    padding: 80px 5%;
+    color: #1f2937;
+    animation: fadeIn 1s ease-in;
+  }
+
+  #careers-section h1 {
+    font-size: 2.5rem;
+    color: #0b2c66;
+    margin-bottom: 10px;
+  }
+
+  #careers-section p {
+    color: #374151;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  /* ===== Tabs ===== */
+  .career-tabs {
+    display: inline-flex;
+    background: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .tab-btn {
+    border: none;
+    background: transparent;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0b2c66;
+    transition: all 0.3s ease;
+  }
+
+  .tab-btn.active {
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+  }
+
+  /* ===== Card Container (Horizontal Scroll) ===== */
+  .career-cards {
+    display: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+  }
+
+  .career-cards.active {
+    display: flex;
+    gap: 20px;
+  }
+
+  .career-cards::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .career-cards::-webkit-scrollbar-thumb {
+    background: #64b5f6;
+    border-radius: 10px;
+  }
+
+  /* ===== Individual Cards ===== */
+  .career-cards .card {
+    background: #fff;
+    min-width: 280px;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .career-cards .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .career-cards .card h3 {
+    color: #0d47a1;
+    margin-bottom: 10px;
+  }
+
+  .career-cards .card p {
+    color: #374151;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .career-cards .btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .career-cards .btn:hover {
+    background: linear-gradient(90deg, #1565c0, #2196f3);
+    transform: scale(1.05);
+  }
+
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".career-cards").forEach(tab => tab.classList.remove("active"));
+
+    document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add("active");
+    document.getElementById(tabId).classList.add("active");
+  }
+</script>
+
+
+
 <footer class="footer">
-  <div class="container">
-    <div class="foot-inner">
-      <div>© <span id="year"></span> Wealth Blue Print</div>
-      <div class="foot-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+  <div class="container footer-inner">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="assets/logo.png" alt="Wealth Blue Print logo" class="footer-logo">
+      <h3>Wealth Blue Print</h3>
+      <p>Your trusted partner for financial growth and security.</p>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Right: Address + Socials -->
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <p>123 Finance Street,<br>New Delhi, India - 110001</p>
+
+      <div class="social-icons">
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/facebook-new.png"
+            alt="facebook-new" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/linkedin.png"
+            alt="linkedin" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/twitter--v4.png"
+            alt="twitter--v4" /></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/instagram-new.png"
+            alt="instagram-new" /></a>
       </div>
     </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Wealth Blue Print. All rights reserved.
   </div>
 </footer>
 <script src="script.js"></script>

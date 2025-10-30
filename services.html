@@ -6,15 +6,105 @@
 <title>Our Services — Wealth Blue Print</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="">
 </head>
 <body>
+
+  <style>
+    /* ===== SERVICES SECTION STYLING ===== */
+    #services-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #f8f9fa, #eef3ff);
+      font-family: "Poppins", sans-serif;
+    }
+  
+    #services-section h1 {
+      font-size: 2.5rem;
+      color: #1a237e;
+      margin-bottom: 10px;
+    }
+  
+    #services-section .lead {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+  
+    #services-section .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-content: center;
+    }
+  
+    #services-section .card {
+      background: linear-gradient(145deg, #ffffff, #e6ebff);
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 100, 0.1);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+  
+    #services-section .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 120, 0.2);
+      background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    }
+  
+    #services-section .icon {
+      font-size: 2.5rem;
+      color: #1565c0;
+      margin-bottom: 15px;
+      transition: transform 0.4s ease, color 0.3s ease;
+    }
+  
+    #services-section .card:hover .icon {
+      color: #0d47a1;
+      transform: scale(1.2) rotate(5deg);
+    }
+  
+    #services-section h3 {
+      font-size: 1.25rem;
+      color: #1a237e;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+  
+    #services-section p {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  
+    /* Responsive */
+    @media (max-width: 768px) {
+      #services-section h1 {
+        font-size: 2rem;
+      }
+  
+      #services-section .lead {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+
 <header class="nav">
   <div class="container nav-inner">
     <div class="brand">
       <img src="assets/logo.png" alt="Wealth Blue Print logo" class="logo">
-      <span>Wealth Blue Print</span>
+      <span style="color: white;">Wealth Blue Print</span>
     </div>
-    <nav class="nav-links">
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
@@ -23,26 +113,850 @@
     </nav>
   </div>
 </header>
-<main class="container">
-  <h1>Our Services</h1>
-  <p class="lead">Smart, reliable financial solutions for individuals and businesses.</p>
-  <div class="grid">
-    <div class="card"><h3>Wealth Management</h3><p>Tailored investment portfolios to help your wealth grow sustainably.</p></div>
-    <div class="card"><h3>Retirement Planning</h3><p>Plan today for a comfortable and secure tomorrow.</p></div>
-    <div class="card"><h3>Tax & Estate Planning</h3><p>Protect and preserve your legacy with strategic planning.</p></div>
-    <div class="card"><h3>Corporate Advisory</h3><p>Expert guidance for corporate finance, mergers, and growth strategies.</p></div>
-  </div>
-</main>
-<footer class="footer">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav {
+    background: #1e40af;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .brand img.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #fbbf24;
+  }
+
+  .nav-links .cta {
+    background: #fbbf24;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links .cta:hover {
+    background: #facc15;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #1e40af;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      display: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+</script>
+
+<section id="services" class="services">
   <div class="container">
-    <div class="foot-inner">
-      <div>© <span id="year"></span> Wealth Blue Print</div>
-      <div class="foot-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+    <div class="section-header">
+      
+      <h2>Comprehensive <span class="client-txt">Financial Solutions</span></h2>
+      <p>Tailored services to meet all your financial needs and goals</p>
+
+      <!-- 🌟 Animated Our Offerings Button -->
+      <a href="#services" class="offerings-btn">Explore Our Offerings</a>
+    </div>
+
+    <div class="services-grid">
+      <!-- Financial Planning -->
+      <div class="service-card">
+        <div class="icon-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/2331/2331947.png" alt="Financial Planning" />
+        </div>
+        <h3>Financial Planning</h3>
+        <p>Develop a roadmap to achieve your financial goals through comprehensive planning.</p>
+        <a href="./plans/financial-planning.html" class="service-link">Connect with a certified financial advisor →</a>
+      </div>
+
+      <!-- Risk Planning -->
+      <div class="service-card">
+        <div class="icon-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Risk Planning" />
+        </div>
+        <h3>Risk Planning</h3>
+        <p>Protect your assets and mitigate potential risks with our strategic management solutions.</p>
+        <a href="./plans/risk-planning.html" class="service-link">Discover our flexible term insurance plans →</a>
+      </div>
+
+      <!-- Investment Planning -->
+      <div class="service-card">
+        <div class="icon-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/1995/1995571.png" alt="Investment Planning" />
+        </div>
+        <h3>Investment Planning</h3>
+        <p>Grow your wealth through diversified investment strategies tailored to your risk tolerance.</p>
+        <a href="./plans/investment-plans.html" class="service-link">Explore investment plan options to grow your wealth →</a>
+      </div>
+
+      <!-- Retirement Planning -->
+      <div class="service-card">
+        <div class="icon-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/2331/2331981.png" alt="Retirement Planning" />
+        </div>
+        <h3>Retirement Planning</h3>
+        <p>Secure your future with comprehensive retirement plans ensuring financial independence.</p>
+        <a href="./plans/retirement-plans.html" class="service-link">Plan your ideal retirement journey →</a>
+      </div>
+
+      <!-- Education Planning -->
+      <div class="service-card">
+        <div class="icon-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/3062/3062522.png" alt="Education Planning" />
+        </div>
+        <h3>Education Planning</h3>
+        <p>Invest in your children's future with education savings and scholarship guidance.</p>
+        <a href="./plans/education-plans.html" class="service-link">Start your child’s education planning →</a>
+      </div>
+
+      <!-- Tax Planning -->
+      <div class="service-card">
+        <div class="icon-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/4221/4221393.png" alt="Tax Planning" />
+        </div>
+        <h3>Tax Planning</h3>
+        <p>Optimize your tax strategy with professional advice to minimize liabilities and maximize returns.</p>
+        <a href="./plans/tax-planning.html" class="service-link">Learn more about smart tax strategies →</a>
       </div>
     </div>
   </div>
+</section>
+
+<style>
+  /* ===== Base Styles ===== */
+  .services {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .section-header .client-txt {
+    color: #007bff;
+  }
+
+  .section-header p {
+    color: #666;
+  }
+
+  /* ===== ✨ Animated Our Offerings Button ===== */
+  .offerings-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 34px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offerings-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+  }
+
+  .offerings-btn:hover::before {
+    left: 125%;
+  }
+
+  .offerings-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+    background: linear-gradient(90deg, #0056d2, #00a2ff);
+  }
+
+  /* Floating animation */
+  @keyframes floaty {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .offerings-btn {
+    animation: floaty 2.5s ease-in-out infinite;
+  }
+
+  /* ===== Service Grid ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+  }
+
+  /* ===== Card Styling ===== */
+  .service-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  /* Fade-up animation */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Sequential delay */
+  .service-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .service-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .service-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .service-card:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .service-card:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .service-card:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0, 123, 255, 0.15);
+  }
+
+  .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 123, 255, 0.15), rgba(255, 255, 255, 0));
+    transition: left 0.6s ease;
+    z-index: 0;
+  }
+
+  .service-card:hover::before {
+    left: 100%;
+  }
+
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+  }
+
+  .icon-wrapper img {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .icon-wrapper img {
+    transform: rotate(15deg) scale(1.2);
+  }
+
+  .service-card:hover .icon-wrapper {
+    background: rgba(0, 123, 255, 0.2);
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+    color: #222;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .service-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    z-index: 1;
+    position: relative;
+  }
+
+  .service-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0056d2;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+
+  .service-link:hover {
+    color: #003f9e;
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  // Redirect service cards
+  document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const link = card.getAttribute("data-link");
+      if (link) window.location.href = link;
+    });
+  });
+</script>
+
+
+
+<section id="financial-tools">
+  <h2>💰 Smart Financial Calculators</h2>
+  <p class="lead">Explore different tools to plan, invest, and grow your wealth wisely.</p>
+
+  <div class="calc-container">
+    <!-- Sidebar Menu -->
+    <div class="calc-menu">
+      <h3>💹 Investment & Wealth</h3>
+      <ul>
+        <li class="active" onclick="showCalculator(event, 'welcome')">Welcome</li>
+        <li onclick="showCalculator(event, 'compound')">Compound Interest</li>
+        <li onclick="showCalculator(event, 'sip')">SIP Calculator</li>
+        <li onclick="showCalculator(event, 'lumpsum')">Lump Sum Investment</li>
+        <li onclick="showCalculator(event, 'retirement')">Retirement Corpus</li>
+        <li onclick="showCalculator(event, 'goal')">Goal-Based Investment</li>
+        <li onclick="showCalculator(event, 'inflation')">Inflation Impact</li>
+      </ul>
+
+      <h3>🏦 Loan & Credit</h3>
+      <ul>
+        <li onclick="showCalculator(event, 'emi')">EMI Calculator</li>
+        <li onclick="showCalculator(event, 'debt')">Debt Payoff Calculator</li>
+      </ul>
+    </div>
+
+    <!-- Calculator Display -->
+    <div class="calc-display" id="calc-display">
+      <div class="welcome-box">
+        <h3>📊 Financial Planner</h3>
+        <p>
+          Welcome — select a calculator from the left to begin.
+        </p>
+        <p>
+          Tips: use the Compound, SIP, Lump Sum calculators to visualise growth over time. Loans and debt tools show repayment details.
+        </p>
+        <button class="explore-btn" onclick="showCalculator(event, 'compound')">Try Compound Interest</button>
+
+        <!-- small placeholder charts to keep right-side interesting without 'dashboard' -->
+        <div class="chart-container" style="max-width:600px; margin:20px auto;">
+          <canvas id="welcomeMiniChart"></canvas>
+        </div>
+
+        <div class="description">
+          💡 The mini-chart above shows a sample investment vs inflation trend for illustration.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+  #financial-tools {
+    background: #f8f9fa;
+    color: #212121;
+    font-family: "Poppins", sans-serif;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  #financial-tools h2 { color: #0d47a1; font-size: 2rem; }
+  .calc-container { display:flex; justify-content:center; flex-wrap:wrap; max-width:1100px; margin:40px auto; background:#fff; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1); overflow:hidden; }
+  .calc-menu { flex:1; min-width:240px; background:#f1f5fb; padding:30px 20px; border-right:1px solid #e0e0e0; }
+  .calc-menu ul { list-style:none; padding:0; margin:0 0 20px; }
+  .calc-menu li { background:#fff; margin:6px 0; padding:10px 14px; border-radius:8px; cursor:pointer; transition:all .25s; border:1px solid transparent; text-align:left; }
+  .calc-menu li:hover { background:#e3f2fd; color:#0d47a1; transform:translateX(3px); }
+  .calc-menu li.active { background:#bbdefb; color:#0d47a1; border:1px solid #90caf9; }
+  .calc-display { flex:2; min-width:350px; padding:40px; background:#fff; animation:fadeIn .4s ease; }
+  .welcome-box { text-align:center; border:2px dashed #bbdefb; border-radius:12px; padding:30px; background:#f9fbff; }
+  .explore-btn { margin-top:12px; background:linear-gradient(90deg,#64b5f6,#1976d2); color:white; border:none; border-radius:10px; padding:10px 20px; font-weight:600; cursor:pointer; }
+  .calc-form { text-align:left; }
+  .calc-form label { display:block; margin-bottom:6px; color:#0d47a1; font-weight:500; }
+  .calc-form input { width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #cfd8dc; background:#fafafa; }
+  .button-group { display:flex; gap:10px; justify-content:flex-start; margin-top:10px; }
+  .calc-form button { flex:1; padding:12px; border:none; border-radius:10px; font-weight:600; cursor:pointer; transition:0.25s; }
+  .calc-btn { background:linear-gradient(90deg,#64b5f6,#1976d2); color:white; }
+  .reset-btn { background:#ef5350; color:white; }
+  .chart-container { margin-top:20px; max-width:700px; }
+  .description { margin-top:18px; padding:12px; background:#f9fbff; border-left:4px solid #1976d2; border-radius:8px; text-align:left; }
+  .result { margin-top:16px; font-size:1.15rem; color:#2e7d32; font-weight:700; }
+  @keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+  @media (max-width:768px) { .calc-container{flex-direction:column;} .calc-menu{border-right:none;border-bottom:1px solid #e0e0e0;} }
+</style>
+
+<script>
+  let currentChart = null;
+  // draw a small welcome mini-chart to keep the right panel lively by default
+  window.addEventListener("load", () => {
+    const ctx = document.getElementById("welcomeMiniChart");
+    if (ctx) {
+      const years = [...Array(6).keys()].map(i => `Y${i+1}`);
+      const invest = years.map((_, i) => 50000 * Math.pow(1.12, i));
+      const inflation = years.map((_, i) => 50000 * Math.pow(1.04, i));
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: years,
+          datasets: [
+            { label: "Sample Investment", data: invest, borderColor: "#1976d2", fill: false },
+            { label: "Sample Inflation", data: inflation, borderColor: "#ef5350", fill: false }
+          ]
+        },
+        options: { responsive: true, plugins: { legend: { position: "bottom" } }, scales: { y: { beginAtZero: false } } }
+      });
+    }
+  });
+
+  // Show appropriate content for chosen calculator (welcome default)
+  function showCalculator(event, type) {
+    // ensure event target exists (some calls might pass DOM element)
+    const display = document.getElementById("calc-display");
+    const menuItems = document.querySelectorAll(".calc-menu li");
+    menuItems.forEach(li => li.classList.remove("active"));
+    // mark clicked item active
+    if (event && event.target) event.target.classList.add("active");
+
+    const contents = {
+      welcome: `
+        <div class="welcome-box">
+          <h3>📊 Financial Planner</h3>
+          <p>Select a calculator from the left to begin. Tip: Try Compound and SIP to compare growth.</p>
+          <button class="explore-btn" onclick="showCalculator(event, 'compound')">Try Compound Interest</button>
+          <div class="description">Choose a tool to run calculations and see an illustrative chart below each result.</div>
+        </div>
+      `,
+      compound: generateCalcHTML("Compound Interest", [
+        ["Principal (₹)", "p"], ["Annual Rate (%)", "r"], ["Years", "t"], ["Compounding/Year", "n"]
+      ], "compoundResult"),
+      sip: generateCalcHTML("SIP Calculator", [
+        ["Monthly Investment (₹)", "sipAmount"], ["Annual Return Rate (%)", "sipRate"], ["Time (Years)", "sipYears"]
+      ], "sipResult"),
+      lumpsum: generateCalcHTML("Lump Sum Investment", [
+        ["Investment (₹)", "lsAmount"], ["Expected Return (%)", "lsRate"], ["Years", "lsYears"]
+      ], "lsResult"),
+      retirement: generateCalcHTML("Retirement Corpus", [
+        ["Monthly Expense (₹)", "retExpense"], ["Inflation Rate (%)", "retInflation"],
+        ["Years to Retirement", "retYears"], ["Post Retirement Years", "retPost"], ["Expected Return (%)", "retReturn"]
+      ], "retResult"),
+      goal: generateCalcHTML("Goal-Based Investment", [
+        ["Goal Amount (₹)", "goalAmount"], ["Years to Goal", "goalYears"], ["Expected Return (%)", "goalRate"]
+      ], "goalResult"),
+      inflation: generateCalcHTML("Inflation Impact", [
+        ["Current Value (₹)", "infValue"], ["Inflation Rate (%)", "infRate"], ["Years", "infYears"]
+      ], "infResult"),
+      emi: generateCalcHTML("Loan EMI", [
+        ["Loan Amount (₹)", "emiPrincipal"], ["Interest Rate (%)", "emiRate"], ["Loan Tenure (Years)", "emiYears"]
+      ], "emiResult"),
+      debt: generateCalcHTML("Debt Payoff", [
+        ["Total Debt (₹)", "debtTotal"], ["Monthly Payment (₹)", "debtMonthly"], ["Interest Rate (%)", "debtRate"]
+      ], "debtResult")
+    };
+
+    display.innerHTML = contents[type] || contents.welcome;
+    // ensure any existing chart is removed
+    if (currentChart) { try { currentChart.destroy(); } catch(e){} currentChart = null; }
+  }
+
+  function generateCalcHTML(title, inputs, resultId) {
+    return `
+      <h3>${title}</h3>
+      <div class="calc-form">
+        ${inputs.map(i => `<label>${i[0]}</label><input id="${i[1]}" type="number" step="any">`).join('')}
+        <div class="button-group">
+          <button class="calc-btn" onclick="handleCalculate('${title}', '${resultId}')">Calculate</button>
+          <button class="reset-btn" onclick="resetForm()">Reset</button>
+        </div>
+        <div id="${resultId}" class="result"></div>
+      </div>
+      <div class="chart-container"><canvas id="chartCanvas"></canvas></div>
+      <div class="description">${getDescriptionByTitle(title)}</div>
+    `;
+  }
+
+  function getDescriptionByTitle(title) {
+    const map = {
+      "Compound Interest": "📈 Compound interest lets your investment earn returns on prior returns — growth accelerates over time.",
+      "SIP Calculator": "💡 SIPs (Systematic Investment Plans) help you invest regularly to benefit from rupee-cost averaging and compounding.",
+      "Lump Sum Investment": "💰 Invest a single amount and watch it grow with compounded returns over years.",
+      "Retirement Corpus": "👵 Estimate how much you need to set aside to cover post-retirement expenses adjusted for inflation and expected returns.",
+      "Goal-Based Investment": "🎯 Calculate how much to invest today to reach a future financial goal.",
+      "Inflation Impact": "💸 See how inflation erodes purchasing power and increases future costs.",
+      "Loan EMI": "🏦 Find your monthly EMI and total payable amount for a fixed-rate loan.",
+      "Debt Payoff": "🔁 Estimate how long it will take to clear debt given a monthly payment and interest rate.",
+      "default": ""
+    };
+    return map[title] || map.default;
+  }
+
+  // Dispatcher for calculate button to call appropriate function
+  function handleCalculate(title, resultId) {
+    switch(title) {
+      case "Compound Interest": calcCompound(resultId); break;
+      case "SIP Calculator": calcSIP(resultId); break;
+      case "Lump Sum Investment": calcLumpSum(resultId); break;
+      case "Retirement Corpus": calcRetirement(resultId); break;
+      case "Goal-Based Investment": calcGoal(resultId); break;
+      case "Inflation Impact": calcInflation(resultId); break;
+      case "Loan EMI": calcEMI(resultId); break;
+      case "Debt Payoff": calcDebt(resultId); break;
+      default: break;
+    }
+  }
+
+  // === Chart helper ===
+  function drawChart(labels, dataSets, options = {}) {
+    const ctx = document.getElementById("chartCanvas");
+    if (!ctx) return;
+    if (currentChart) { try { currentChart.destroy(); } catch(e){} currentChart = null; }
+    currentChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: dataSets
+      },
+      options: Object.assign({
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: { y: { beginAtZero: true } }
+      }, options)
+    });
+  }
+
+  // === Calculators ===
+  function calcCompound(resultId) {
+    const p = parseFloat((document.getElementById("p") || {}).value);
+    const r = parseFloat((document.getElementById("r") || {}).value);
+    const t = parseFloat((document.getElementById("t") || {}).value);
+    const n = parseFloat((document.getElementById("n") || {}).value) || 1;
+    if (!isFinite(p) || !isFinite(r) || !isFinite(t) || t <= 0 || n <= 0) { alert("Please enter valid values for all fields."); return; }
+    const rFrac = r / 100;
+    // yearly values after each year (taking compounding frequency into account)
+    const yearly = [];
+    for (let year = 1; year <= Math.ceil(t); year++) {
+      const periods = n * year;
+      const fv = p * Math.pow(1 + rFrac / n, periods);
+      yearly.push(parseFloat(fv.toFixed(2)));
+    }
+    const fvFinal = p * Math.pow(1 + rFrac / n, n * t);
+    document.getElementById(resultId).innerText = "Future Value: ₹" + fvFinal.toFixed(2);
+    drawChart(yearly.map((_, i) => `Year ${i+1}`), [
+      { label: "Investment Value", data: yearly, borderColor: "#1976d2", fill: true, backgroundColor: "rgba(25,118,210,0.08)" }
+    ]);
+  }
+
+  function calcSIP(resultId) {
+    const sip = parseFloat((document.getElementById("sipAmount") || {}).value);
+    const annualRate = parseFloat((document.getElementById("sipRate") || {}).value);
+    const years = parseFloat((document.getElementById("sipYears") || {}).value);
+    if (!isFinite(sip) || !isFinite(annualRate) || !isFinite(years) || years <= 0) { alert("Please enter valid values for all fields."); return; }
+    const monthlyRate = annualRate / 100 / 12;
+    const months = Math.round(years * 12);
+    const monthlyVals = [];
+    for (let m = 1; m <= months; m++) {
+      const fv = sip * ((Math.pow(1 + monthlyRate, m) - 1) / monthlyRate) * (1 + monthlyRate);
+      monthlyVals.push(parseFloat(fv.toFixed(2)));
+    }
+    document.getElementById(resultId).innerText = "Future Value: ₹" + monthlyVals.at(-1).toFixed(2);
+    // show yearly points for clarity
+    const yearlyLabels = [];
+    const yearlyData = [];
+    for (let y = 1; y <= years; y++) {
+      yearlyLabels.push(`Year ${y}`);
+      yearlyData.push(monthlyVals[y*12 - 1]);
+    }
+    drawChart(yearlyLabels, [
+      { label: "SIP Value", data: yearlyData, borderColor: "#1976d2", fill: true, backgroundColor: "rgba(25,118,210,0.08)" }
+    ]);
+  }
+
+  function calcLumpSum(resultId) {
+    const amt = parseFloat((document.getElementById("lsAmount") || {}).value);
+    const rate = parseFloat((document.getElementById("lsRate") || {}).value);
+    const years = parseFloat((document.getElementById("lsYears") || {}).value);
+    if (!isFinite(amt) || !isFinite(rate) || !isFinite(years) || years <= 0) { alert("Please enter valid values for all fields."); return; }
+    const yearly = [];
+    for (let y = 1; y <= Math.ceil(years); y++) {
+      yearly.push(parseFloat((amt * Math.pow(1 + rate/100, y)).toFixed(2)));
+    }
+    const fv = amt * Math.pow(1 + rate/100, years);
+    document.getElementById(resultId).innerText = "Future Value: ₹" + fv.toFixed(2);
+    drawChart(yearly.map((_,i)=>`Year ${i+1}`), [
+      { label: "Value", data: yearly, borderColor: "#1976d2", fill: true, backgroundColor: "rgba(25,118,210,0.08)" }
+    ]);
+  }
+
+  function calcRetirement(resultId) {
+    const exp = parseFloat((document.getElementById("retExpense") || {}).value);
+    const inf = parseFloat((document.getElementById("retInflation") || {}).value) / 100;
+    const yrs = parseFloat((document.getElementById("retYears") || {}).value);
+    const post = parseFloat((document.getElementById("retPost") || {}).value);
+    const ret = parseFloat((document.getElementById("retReturn") || {}).value) / 100;
+    if (!isFinite(exp) || !isFinite(inf) || !isFinite(yrs) || !isFinite(post) || !isFinite(ret) || yrs < 0 || post <= 0) { alert("Please enter valid values for all fields."); return; }
+    // inflate expense to retirement
+    const inflatedExpense = exp * Math.pow(1 + inf, yrs);
+    // monthly return rate post-retirement
+    const rMonthly = ret / 12;
+    // corpus needed to generate monthly payments for 'post' years using annuity formula
+    const monthsPost = post * 12;
+    const corpus = inflatedExpense * ((1 - Math.pow(1 + rMonthly, -monthsPost)) / rMonthly);
+    document.getElementById(resultId).innerText = "Required Corpus: ₹" + corpus.toFixed(2);
+    drawChart(["Today", "At Retirement"], [{ label: "Monthly Expense", data: [exp, parseFloat(inflatedExpense.toFixed(2))], borderColor: "#1976d2", fill: false }]);
+  }
+
+  function calcGoal(resultId) {
+    const goal = parseFloat((document.getElementById("goalAmount") || {}).value);
+    const years = parseFloat((document.getElementById("goalYears") || {}).value);
+    const rate = parseFloat((document.getElementById("goalRate") || {}).value) / 100;
+    if (!isFinite(goal) || !isFinite(years) || !isFinite(rate) || years <= 0) { alert("Please enter valid values for all fields."); return; }
+    const present = goal / Math.pow(1 + rate, years);
+    document.getElementById(resultId).innerText = "You need to invest ₹" + present.toFixed(2) + " today.";
+    drawChart(["Today", `In ${years} years`], [{ label: "Goal Progress", data: [parseFloat(present.toFixed(2)), goal], borderColor: "#1976d2", fill: true, backgroundColor: "rgba(25,118,210,0.08)" }]);
+  }
+
+  function calcInflation(resultId) {
+    const val = parseFloat((document.getElementById("infValue") || {}).value);
+    const rate = parseFloat((document.getElementById("infRate") || {}).value) / 100;
+    const years = parseFloat((document.getElementById("infYears") || {}).value);
+    if (!isFinite(val) || !isFinite(rate) || !isFinite(years) || years <= 0) { alert("Please enter valid values for all fields."); return; }
+    const arr = [];
+    for (let y = 1; y <= Math.ceil(years); y++) arr.push(parseFloat((val * Math.pow(1 + rate, y)).toFixed(2)));
+    document.getElementById(resultId).innerText = "Future Cost: ₹" + arr.at(-1).toFixed(2);
+    drawChart(arr.map((_,i)=>`Year ${i+1}`), [{ label: "Future Cost", data: arr, borderColor: "#ef5350", fill: true, backgroundColor: "rgba(239,83,80,0.08)" }]);
+  }
+
+  function calcEMI(resultId) {
+    const p = parseFloat((document.getElementById("emiPrincipal") || {}).value);
+    const annual = parseFloat((document.getElementById("emiRate") || {}).value);
+    const years = parseFloat((document.getElementById("emiYears") || {}).value);
+    if (!isFinite(p) || !isFinite(annual) || !isFinite(years) || years <= 0) { alert("Please enter valid values for all fields."); return; }
+    const r = annual / 100 / 12;
+    const n = Math.round(years * 12);
+    const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    document.getElementById(resultId).innerText = "Monthly EMI: ₹" + emi.toFixed(2) + " | Total Payable: ₹" + (emi * n).toFixed(2);
+    drawChart(["Principal", "Total Payable"], [{ label: "Loan Breakdown", data: [p, parseFloat((emi * n).toFixed(2))], borderColor: "#1976d2", fill: true, backgroundColor: "rgba(25,118,210,0.08)" }]);
+  }
+
+  function calcDebt(resultId) {
+    const total = parseFloat((document.getElementById("debtTotal") || {}).value);
+    const pay = parseFloat((document.getElementById("debtMonthly") || {}).value);
+    const annual = parseFloat((document.getElementById("debtRate") || {}).value);
+    if (!isFinite(total) || !isFinite(pay) || !isFinite(annual) || pay <= 0) { alert("Please enter valid values for all fields."); return; }
+    const monthlyRate = annual / 100 / 12;
+    // if payment <= interest, it'll never be paid off
+    if (pay <= total * monthlyRate) { alert("Monthly payment is too low to cover interest. Increase payment."); return; }
+    const months = Math.log(pay / (pay - total * monthlyRate)) / Math.log(1 + monthlyRate);
+    document.getElementById(resultId).innerText = "Debt-Free in: " + months.toFixed(1) + " months (≈ " + (months/12).toFixed(1) + " years)";
+    drawChart(["Debt", "Total Payments"], [{ label: "Debt vs Payments", data: [total, parseFloat((pay * months).toFixed(2))], borderColor: "#ef5350", fill: true, backgroundColor: "rgba(239,83,80,0.08)" }]);
+  }
+
+  // reset inputs + results + chart
+  function resetForm() {
+    const inputs = document.querySelectorAll(".calc-form input");
+    inputs.forEach(i => i.value = "");
+    const results = document.querySelectorAll(".result");
+    results.forEach(r => r.innerText = "");
+    if (currentChart) { try { currentChart.destroy(); } catch(e){} currentChart = null; }
+  }
+</script>
+
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="assets/logo.png" alt="Wealth Blue Print logo" class="footer-logo">
+      <h3>Wealth Blue Print</h3>
+      <p>Your trusted partner for financial growth and security.</p>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Right: Address + Socials -->
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <p>123 Finance Street,<br>New Delhi, India - 110001</p>
+
+      <div class="social-icons">
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/facebook-new.png"
+            alt="facebook-new" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/linkedin.png"
+            alt="linkedin" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/twitter--v4.png"
+            alt="twitter--v4" /></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/instagram-new.png"
+            alt="instagram-new" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Wealth Blue Print. All rights reserved.
+  </div>
 </footer>
-<script src="script.js"></script>
-</body></html>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+
+</html>

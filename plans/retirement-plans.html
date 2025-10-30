@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Planning | Secure Your Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #f5f9ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff8c00, #ffb347);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.25), transparent 60%);
+            animation: rotateLight 8s linear infinite;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+        }
+
+        @keyframes rotateLight {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro h2 {
+            color: #ff8c00;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .plan-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .plan-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.25);
+        }
+
+        .plan-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .plan-card:hover img {
+            transform: rotate(8deg) scale(1.1);
+        }
+
+        .plan-card h3 {
+            font-size: 1.4rem;
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .plan-card p {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .plan-compare {
+            margin: 60px 0;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+        }
+
+        .plan-compare table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .plan-compare th,
+        .plan-compare td {
+            padding: 15px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .plan-compare th {
+            background: #ff8c00;
+            color: #fff;
+        }
+
+        .plan-compare tr:hover td {
+            background: #fff7ee;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin: 40px auto;
+            padding: 14px 36px;
+            background: linear-gradient(90deg, #ff8c00, #ffb347);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: floaty 2.8s ease-in-out infinite;
+        }
+
+        @keyframes floaty {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Retirement Planning & Wealth Security</h1>
+        <p>Build a confident retirement plan with sustainable income, diversified investments, and lifetime protection.
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Why Retirement Planning Matters</h2>
+            <p>Retirement planning is not just about saving — it’s about creating a strategy that supports your
+                lifestyle,
+                covers healthcare, and ensures you never outlive your wealth. Whether you aim for financial freedom at
+                45 or a
+                secure legacy at 65, our structured retirement frameworks help you achieve it.</p>
+        </div>
+
+        <div class="plan-sections">
+            <div class="plan-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/706/706164.png" alt="Conservative Plan">
+                <h3>Conservative Plan</h3>
+                <p>Ideal for those nearing retirement, focused on capital preservation and steady income. Includes debt
+                    mutual
+                    funds, annuity, and government-backed deposits.</p>
+            </div>
+
+            <div class="plan-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Balanced Plan">
+                <h3>Balanced Plan</h3>
+                <p>Combines growth and safety with diversified investments — equity, hybrid mutual funds, and pension
+                    products.
+                    Perfect for those with 10–15 years left before retirement.</p>
+            </div>
+
+            <div class="plan-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Aggressive Growth Plan">
+                <h3>Aggressive Growth Plan</h3>
+                <p>Suited for younger investors who can take calculated risks. Focuses on equity-heavy allocation and
+                    SIPs for
+                    long-term wealth creation and inflation protection.</p>
+            </div>
+        </div>
+
+        <div class="plan-compare">
+            <h2 style="text-align:center; color:#ff8c00; margin-bottom:20px;">Compare Our Retirement Plans</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Conservative</th>
+                        <th>Balanced</th>
+                        <th>Aggressive</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Investment Allocation</td>
+                        <td>80% Debt / 20% Equity</td>
+                        <td>50% Equity / 50% Debt</td>
+                        <td>80% Equity / 20% Debt</td>
+                    </tr>
+                    <tr>
+                        <td>Expected Annual Return</td>
+                        <td>6% - 8%</td>
+                        <td>8% - 10%</td>
+                        <td>10% - 14%</td>
+                    </tr>
+                    <tr>
+                        <td>Risk Level</td>
+                        <td>Low</td>
+                        <td>Moderate</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Liquidity</td>
+                        <td>Limited (Annuity-based)</td>
+                        <td>Moderate</td>
+                        <td>High (Market linked)</td>
+                    </tr>
+                    <tr>
+                        <td>Tax Benefits (80C / 80CCD)</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="../services.html" class="back-btn">← Back to Services</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Strategic Retirement Solutions | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>

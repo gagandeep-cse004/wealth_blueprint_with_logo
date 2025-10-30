@@ -12,9 +12,16 @@
   <div class="container nav-inner">
     <div class="brand">
       <img src="assets/logo.png" alt="Wealth Blue Print logo" class="logo">
-      <span>Wealth Blue Print</span>
+      <span style="color: white;">Wealth Blue Print</span>
     </div>
-    <nav class="nav-links">
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
@@ -23,26 +30,323 @@
     </nav>
   </div>
 </header>
-<main class="container contact">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav {
+    background: #1e40af;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .brand img.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #fbbf24;
+  }
+
+  .nav-links .cta {
+    background: #fbbf24;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links .cta:hover {
+    background: #facc15;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #1e40af;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      display: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+
+
+
+  .contact {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.contact h1 {
+  color: #0077b6;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.contact p {
+  color: #555;
+  margin-bottom: 25px;
+  animation: slideIn 1.2s ease forwards;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f8faff;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+  transform: translateY(-3px);
+  background: #fff;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: linear-gradient(45deg, #00b4d8, #48cae4);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #48cae4, #00b4d8);
+}
+
+#success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 999;
+  transition: transform 0.4s ease;
+}
+
+#success-popup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+</script>
+
+<section id="contact-section" class="contact">
   <h1>Contact Us</h1>
-  <p>We’d love to hear from you. Fill out the form below and we’ll get back to you soon.</p>
-  <form class="contact-form" onsubmit="handleSubmit(event)">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+  <p>We’d love to hear from you. Fill out the form below.</p>
+
+  <form id="contact-form">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="" name="Mobile" placeholder="Your Phone number" required>
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
     <button type="submit" class="btn">Send Message</button>
   </form>
-</main>
+
+  <div id="success-popup">
+    <h2>🎉 Message Sent!</h2>
+    <p>Thank you for contacting us. We will respond soon!</p>
+  </div>
+</section>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    // Fetch request to Web3Forms
+    let response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    let result = await response.json();
+
+    if (result.success) {
+      const popup = document.getElementById('success-popup');
+      popup.classList.add('show');
+
+      setTimeout(() => { popup.classList.remove('show'); }, 3000);
+      this.reset();
+    } else {
+      alert("❌ Error: " + result.message);
+    }
+  });
+</script>
+
+
 <footer class="footer">
-  <div class="container">
-    <div class="foot-inner">
-      <div>© <span id="year"></span> Wealth Blue Print</div>
-      <div class="foot-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+  <div class="container footer-inner">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="assets/logo.png" alt="Wealth Blue Print logo" class="footer-logo">
+      <h3>Wealth Blue Print</h3>
+      <p>Your trusted partner for financial growth and security.</p>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Right: Address + Socials -->
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <p>123 Finance Street,<br>New Delhi, India - 110001</p>
+
+      <div class="social-icons">
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/facebook-new.png"
+            alt="facebook-new" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/linkedin.png"
+            alt="linkedin" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/twitter--v4.png"
+            alt="twitter--v4" /></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/instagram-new.png"
+            alt="instagram-new" /></a>
       </div>
     </div>
   </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Wealth Blue Print. All rights reserved.
+  </div>
 </footer>
+
 <script src="script.js"></script>
 </body></html>

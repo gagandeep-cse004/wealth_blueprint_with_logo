@@ -6,15 +6,28 @@
 <title>Wealth Blue Print — Financial Success Starts Here</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<!-- Font Awesome (Stable Version 6.5.1) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13h9e3Y8eF4b+6W2g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 <body>
 <header class="nav">
   <div class="container nav-inner">
     <div class="brand">
       <img src="assets/logo.png" alt="Wealth Blue Print logo" class="logo">
-      <span>Wealth Blue Print</span>
+      <span style="color: white;">Wealth Blue Print</span>
     </div>
-    <nav class="nav-links">
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
@@ -23,39 +36,1120 @@
     </nav>
   </div>
 </header>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav {
+    background: #1e40af;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .brand img.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #fbbf24;
+  }
+
+  .nav-links .cta {
+    background: #fbbf24;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links .cta:hover {
+    background: #facc15;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #1e40af;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      display: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+</script>
+
+
+
 <main>
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <h1>Your Financial Success Starts with a Blueprint</h1>
-      <p>Trusted financial planning, investment strategies, and advisory services for your future.</p>
-      <div class="hero-cta">
-        <a href="services.html" class="btn">Explore Services</a>
-        <a href="contact.html" class="link-btn">Book Consultation</a>
+<!-- Interactive Financial Strategies Hero Section -->
+<section class="financial-hero">
+  <div class="hero-bg-shapes"></div>
+
+  <div class="container financial-hero-inner">
+    <div class="financial-hero-text">
+      <h1>Transform Your Wealth with Smart Financial Strategies</h1>
+      <p>We craft data-driven financial plans designed to grow, protect, and optimize your wealth — no guesswork, just
+        strategy.</p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn-primary" style="text-decoration: none;">Start Planning</a>
+        <a href="contact.html" class="btn-outline" style="text-decoration: none;">Book Consultation</a>
+      </div>
+    </div>
+
+    <div class="financial-hero-visual">
+      <div class="floating-card" style="--delay: 0s;">
+        <img src="assets/investment.svg" alt="Investment Icon">
+        <h3>Investment Growth</h3>
+      </div>
+      <div class="floating-card" style="--delay: 0.3s;">
+        <img src="assets/retirement.svg" alt="Retirement Icon">
+        <h3>Retirement Planning</h3>
+      </div>
+      <div class="floating-card" style="--delay: 0.6s;">
+        <img src="assets/tax.svg" alt="Tax Icon">
+        <h3>Tax Optimization</h3>
       </div>
     </div>
   </div>
 </section>
-<section class="container home-info">
-  <h2>Why Choose Us?</h2>
-  <p>We provide transparent, evidence-based financial strategies tailored to your goals.</p>
-  <ul>
-    <li>Personalized Wealth Management</li>
-    <li>Experienced Advisors</li>
-    <li>Ethical, Client-First Approach</li>
-  </ul>
-</section>
-</main>
-<footer class="footer">
+
+
+<!-- ===== 3D Groww-like Financial Strategies Section (drop-in) ===== -->
+<section class="financial-future" id="Strategies">
   <div class="container">
-    <div class="foot-inner">
-      <div>© <span id="year"></span> Wealth Blue Print</div>
-      <div class="foot-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+    <h1 class="section-title" data-animate>Strategies For A Secure Financial Future</h1>
+    <p class="section-subtext" data-animate>
+      We recognise that every individual’s needs and circumstances are unique. Each client gets the personal attention
+      of senior advisors to craft customised investment strategies aligned with their goals and capacity to invest.
+    </p>
+
+    <div class="strategies-grid" aria-live="polite">
+      <!-- Card template: each card includes an inline "isometric" svg illustration -->
+      <div class="strategy-card" data-animate>
+        <div class="ill-wrap">
+          <!-- Isometric stack (Wealth Builder) -->
+          <svg class="iso" viewBox="0 0 120 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-stack1" x1="0" x2="1">
+                <stop offset="0" stop-color="#0ea5ff" />
+                <stop offset="1" stop-color="#3b82f6" />
+              </linearGradient>
+              <linearGradient id="g-stack2" x1="0" x2="1">
+                <stop offset="0" stop-color="#60a5fa" />
+                <stop offset="1" stop-color="#2563eb" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(10,10)">
+              <polygon points="0,20 40,0 80,20 40,40" fill="#ffffff22" />
+              <polygon points="0,40 40,20 40,60 0,80" fill="#ffffff10" />
+              <rect x="8" y="6" rx="6" width="64" height="22" fill="url(#g-stack1)" />
+              <rect x="4" y="30" rx="6" width="72" height="22" fill="url(#g-stack2)" />
+              <rect x="12" y="54" rx="6" width="56" height="18" fill="#1e3a8a" />
+              <circle cx="64" cy="20" r="4" fill="#fff" opacity="0.9" />
+            </g>
+          </svg>
+        </div>
+
+        <h3><span class="highlight">Wealth Builder</span></h3>
+        <p class="text">
+          Accumulating wealth involves more than managing a budget or timing the market. We specialise in blending multiple asset
+          classes to give you a highly tax-efficient, low-risk investment strategy to ensure your wealth grows in sync with your
+          goals.​
+        </p>
+
+        <div class="card-actions">
+          <button class="read-more-btn">Read More</button>
+        </div>
+
+        <button class="close-btn" aria-label="Close" title="Close">✕</button>
+      </div>
+
+      <div class="strategy-card" data-animate>
+        <div class="ill-wrap">
+          <!-- Isometric coins (Passive Income) -->
+          <svg class="iso" viewBox="0 0 120 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-coin1" x1="0" x2="1">
+                <stop offset="0" stop-color="#F59E0B" />
+                <stop offset="1" stop-color="#D97706" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(20,6)">
+              <ellipse cx="24" cy="20" rx="24" ry="10" fill="#fff2cc" opacity="0.08" />
+              <g transform="translate(0,10)">
+                <ellipse cx="24" cy="16" rx="20" ry="8" fill="url(#g-coin1)" />
+                <ellipse cx="28" cy="6" rx="20" ry="8" fill="#FBBF24" opacity="0.9" />
+                <rect x="8" y="18" width="32" height="6" rx="3" fill="#fff2" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <h3><span class="highlight">Passive Income</span></h3>
+        <p class="text">
+          Increasingly we find that relying on our professional or business income alone might simply not be enough, or
+          risk-proof. Our team can craft recession-proof investment strategies to deliver a passive income - be it for a short
+          term or even several decades - while keeping your capital immune from any market volatility.
+        </p>
+
+        <div class="card-actions">
+          <button class="read-more-btn">Read More</button>
+        </div>
+
+        <button class="close-btn" aria-label="Close" title="Close">✕</button>
+      </div>
+
+      <div class="strategy-card" data-animate>
+        <div class="ill-wrap">
+          <!-- Isometric safe (Retire Rich) -->
+          <svg class="iso" viewBox="0 0 120 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-safe" x1="0" x2="1">
+                <stop offset="0" stop-color="#10B981" />
+                <stop offset="1" stop-color="#059669" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(10,8)">
+              <rect x="6" y="6" rx="8" width="70" height="50" fill="url(#g-safe)" />
+              <circle cx="44" cy="32" r="9" fill="#ffffff22" />
+              <rect x="12" y="12" width="24" height="12" rx="4" fill="#fff" opacity="0.06" />
+            </g>
+          </svg>
+        </div>
+
+        <h3><span class="highlight">Retire Rich</span></h3>
+        <p class="text">
+          Retiring from work should not imply compromising on your lifestyle after retirement? We can plan investment strategies
+          that deliver a regular income, thus enabling you and your family live the long retirement years in the way you desire,
+          without ever running out of funds.
+        </p>
+
+        <div class="card-actions">
+          <button class="read-more-btn">Read More</button>
+        </div>
+
+        <button class="close-btn" aria-label="Close" title="Close">✕</button>
+      </div>
+
+      <div class="strategy-card" data-animate>
+        <div class="ill-wrap">
+          <!-- Isometric diversify (Blended Investment) -->
+          <svg class="iso" viewBox="0 0 120 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-div1" x1="0" x2="1">
+                <stop offset="0" stop-color="#7C3AED" />
+                <stop offset="1" stop-color="#8B5CF6" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(8,6)">
+              <rect x="6" y="6" rx="8" width="36" height="28" fill="url(#g-div1)" />
+              <rect x="36" y="20" rx="8" width="36" height="28" fill="#a78bfa" />
+              <rect x="20" y="34" rx="8" width="36" height="28" fill="#eeeeff" opacity="0.06" />
+            </g>
+          </svg>
+        </div>
+
+        <h3><span class="highlight">Blended Investment</span></h3>
+        <p class="text">
+          Constantly changing market dynamics & uncertain political scenarios imply that you can't keep all eggs in one basket. We
+          specialise in blending multiple market-linked products with guaranteed-return products - to create a unique high-yield
+          yet tax-efficient portfolio that is best aligned to your personal financial goals & risk-appetite.
+        </p>
+
+        <div class="card-actions">
+          <button class="read-more-btn">Read More</button>
+        </div>
+
+        <button class="close-btn" aria-label="Close" title="Close">✕</button>
+      </div>
+
+      <div class="strategy-card" data-animate>
+        <div class="ill-wrap">
+          <!-- Isometric shield (Shield & Protect) -->
+          <svg class="iso" viewBox="0 0 120 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-shield" x1="0" x2="1">
+                <stop offset="0" stop-color="#06b6d4" />
+                <stop offset="1" stop-color="#0891b2" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(16,6)">
+              <path d="M0,8 L24,0 L48,8 L48,28 C48,38 36,48 24,56 C12,48 0,38 0,28 Z" fill="url(#g-shield)" />
+              <circle cx="24" cy="20" r="3.5" fill="#fff" opacity="0.9" />
+            </g>
+          </svg>
+        </div>
+
+        <h3><span class="highlight">Shield & Protect</span></h3>
+        <p class="text">
+          Often unforeseen events - war, recession, pandemic, lay-offs - can create havoc with all that we strived to build over a
+          lifetime. A well-structured insurance plan is a must to help protect not only your loved ones, but also your family
+          business & assets from the financial consequences of any unexpected or unfortunate event.
+        </p>
+
+        <div class="card-actions">
+          <button class="read-more-btn">Read More</button>
+        </div>
+
+        <button class="close-btn" aria-label="Close" title="Close">✕</button>
+      </div>
+
+      <div class="strategy-card" data-animate>
+        <div class="ill-wrap">
+          <!-- Isometric tree / legacy (Legacy Multiplier) -->
+          <svg class="iso" viewBox="0 0 120 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-tree" x1="0" x2="1">
+                <stop offset="0" stop-color="#0ea5a0" />
+                <stop offset="1" stop-color="#059669" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(18,6)">
+              <rect x="14" y="34" width="10" height="20" rx="2" fill="#7c4a00" />
+              <circle cx="20" cy="20" r="14" fill="url(#g-tree)" />
+              <circle cx="30" cy="12" r="6" fill="#10b981" />
+            </g>
+          </svg>
+        </div>
+
+        <h3><span class="highlight">Legacy Multiplier</span></h3>
+        <p class="text">
+          Strategies to compound and preserve wealth for future generations, including estate planning, trusts and tax
+          optimisation.
+        </p>
+
+        <div class="card-actions">
+          <button class="read-more-btn">Read More</button>
+        </div>
+
+        <button class="close-btn" aria-label="Close" title="Close">✕</button>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== Styles & Script (replace existing style/script) ===== -->
+<style>
+  :root {
+    --accent: #0077ff;
+    --accent-2: #60a5fa;
+    --bg: #f7fbff;
+    --card-bg: #ffffff;
+    --glass: rgba(255, 255, 255, 0.6);
+    --muted: #eef6ff;
+    --radius: 18px;
+  }
+
+  .financial-future {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--bg), #f2f9ff);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #0b1733;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .section-subtext {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 36px;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .strategies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    align-items: start;
+    perspective: 1200px;
+  }
+
+  .strategy-card {
+    background: linear-gradient(180deg, var(--card-bg), #fbfdff);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 22px rgba(16, 24, 40, 0.06);
+    padding: 18px;
+    position: relative;
+    overflow: visible;
+    transition: transform 420ms cubic-bezier(.2, .9, .2, 1), box-shadow 300ms ease, filter 300ms ease;
+    transform-origin: center center;
+    will-change: transform, box-shadow;
+  }
+
+  /* 3D illustration wrapper */
+  .ill-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    transform-style: preserve-3d;
+  }
+
+  .iso {
+    width: 120px;
+    height: 90px;
+    display: block;
+    transform: rotateX(12deg) rotateY(-14deg) translateZ(6px);
+    filter: drop-shadow(0 8px 22px rgba(2, 6, 23, 0.08));
+  }
+
+  .strategy-card h3 {
+    text-align: center;
+    margin: 6px 0 8px;
+    font-size: 1.05rem;
+    color: #071433;
+  }
+
+  .highlight {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .strategy-card .text {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-height: 88px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 520ms cubic-bezier(.2, .9, .2, 1);
+    padding-right: 6px;
+  }
+
+  .strategy-card .text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 42px;
+    background: linear-gradient(transparent, var(--card-bg));
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+
+  .card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* Button styling (shimmer) */
+  .read-more-btn {
+    --pad-y: 0.56rem;
+    --pad-x: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: var(--pad-y) var(--pad-x);
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 0.93rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    box-shadow: 0 8px 28px rgba(3, 102, 214, 0.12);
+    transition: transform 260ms cubic-bezier(.2, .9, .2, 1), box-shadow 260ms ease;
+  }
+
+  .read-more-btn::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -30%;
+    width: 60%;
+    height: 180%;
+    transform: translateX(-140%) rotate(8deg);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.06));
+    transition: transform 700ms cubic-bezier(.2, .9, .2, 1);
+    pointer-events: none;
+  }
+
+  .read-more-btn:hover::before {
+    transform: translateX(220%) rotate(8deg);
+    transition-duration: 1000ms;
+  }
+
+  .read-more-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 300ms ease;
+    display: inline-block;
+  }
+
+  /* close button inside card (hidden normally) */
+  .close-btn {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    background: transparent;
+    border: 0;
+    font-size: 16px;
+    color: #374151;
+    padding: 8px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 240ms ease, transform 240ms ease;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  /* Active (in-place expanded) */
+  .strategy-card.active {
+    z-index: 80;
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 36px 90px rgba(7, 17, 41, 0.12);
+    border-radius: calc(var(--radius) + 6px);
+  }
+
+  .strategy-card.active .text {
+    max-height: 260px;
+    overflow: auto;
+  }
+
+  .strategy-card.active .text::after {
+    opacity: 0;
+  }
+
+  .strategy-card.active .close-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* minimal scrollbar */
+  .strategy-card .text {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
+  }
+
+  .strategy-card .text::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .strategy-card .text::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+  }
+
+  .strategy-card .text::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Dim & blur non-active cards */
+  .strategies-grid.dimmed .strategy-card:not(.active) {
+    filter: blur(3px) brightness(0.88);
+    transform: scale(0.995);
+    pointer-events: none;
+    user-select: none;
+    transition: filter 260ms linear, transform 260ms linear;
+  }
+
+  /* show arrow rotation when active */
+  .strategy-card.active .read-more-btn svg {
+    transform: rotate(180deg);
+  }
+
+  /* small hover depth */
+  .strategy-card:hover .iso {
+    transform: rotateX(6deg) rotateY(-8deg) translateZ(12px) scale(1.02);
+  }
+
+  /* responsive */
+  @media (max-width:900px) {
+    .iso {
+      width: 100px;
+      height: 74px;
+    }
+
+    .strategy-card .text {
+      max-height: 78px;
+    }
+
+    .strategy-card.active .text {
+      max-height: 220px;
+    }
+  }
+
+  @media (max-width:600px) {
+    .strategies-grid {
+      gap: 14px;
+      grid-template-columns: 1fr;
+    }
+
+    .strategy-card {
+      padding: 14px;
+    }
+
+    .close-btn {
+      right: 8px;
+      top: 8px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    // scroll reveal
+    const animEls = document.querySelectorAll('[data-animate]');
+    const reveal = () => {
+      animEls.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight - 80) el.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    const grid = document.querySelector('.strategies-grid');
+    const cards = Array.from(document.querySelectorAll('.strategy-card'));
+
+    // initialize buttons & close buttons
+    cards.forEach(card => {
+      const btn = card.querySelector('.read-more-btn');
+      if (btn) {
+        btn.innerHTML = '<span class="btn-label">Read More</span>' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>';
+        btn.setAttribute('type', 'button');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      const close = card.querySelector('.close-btn');
+      close.addEventListener('click', (e) => {
+        e.stopPropagation();
+        collapseActive();
+      });
+    });
+
+    function collapseActive() {
+      const active = document.querySelector('.strategy-card.active');
+      if (!active) return;
+      active.classList.remove('active');
+      active.querySelector('.btn-label').textContent = 'Read More';
+      active.querySelector('.read-more-btn').setAttribute('aria-expanded', 'false');
+      grid.classList.remove('dimmed');
+      document.body.style.overflow = '';
+    }
+
+    function openCard(card) {
+      // close other
+      const prev = document.querySelector('.strategy-card.active');
+      if (prev && prev !== card) {
+        prev.classList.remove('active');
+        prev.querySelector('.btn-label').textContent = 'Read More';
+        prev.querySelector('.read-more-btn').setAttribute('aria-expanded', 'false');
+      }
+      card.classList.add('active');
+      card.querySelector('.btn-label').textContent = 'Read Less';
+      card.querySelector('.read-more-btn').setAttribute('aria-expanded', 'true');
+      grid.classList.add('dimmed');
+
+      // lock body scroll on narrow viewports
+      if (window.innerWidth < 700) document.body.style.overflow = 'hidden';
+
+      // ensure text scroll top
+      const t = card.querySelector('.text'); if (t) t.scrollTop = 0;
+
+      // focus on button for accessibility
+      const btn = card.querySelector('.read-more-btn'); if (btn) btn.focus({ preventScroll: true });
+    }
+
+    // toggle via button
+    grid.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.read-more-btn');
+      if (!btn) return;
+      ev.preventDefault();
+      const card = btn.closest('.strategy-card');
+      if (!card) return;
+      if (card.classList.contains('active')) collapseActive(); else openCard(card);
+    });
+
+    // click outside to collapse
+    document.addEventListener('click', (ev) => {
+      const active = document.querySelector('.strategy-card.active');
+      if (!active) return;
+      if (ev.target.closest('.strategy-card.active')) return;
+      if (ev.target.closest('.read-more-btn')) return;
+      collapseActive();
+    });
+
+    // ESC to collapse
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' || ev.key === 'Esc') collapseActive();
+    });
+
+    // keyboard activation (Enter/Space)
+    grid.addEventListener('keydown', (ev) => {
+      if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.closest('.read-more-btn')) {
+        ev.preventDefault();
+        ev.target.closest('.read-more-btn').click();
+      }
+    });
+
+    // auto-close when user scrolls away
+    window.addEventListener('scroll', () => {
+      const active = document.querySelector('.strategy-card.active');
+      if (!active) return;
+      const rect = active.getBoundingClientRect();
+      if (rect.top > window.innerHeight || rect.bottom < -120) collapseActive();
+    });
+
+  })();
+</script>
+
+
+
+<!-- 🔹 WHY CHOOSE US + CLIENT REVIEWS -->
+<section class="whyus-wrapper">
+  <h2 class="whyus-heading">Why Choose Us?</h2>
+  <p class="whyus-intro">We deliver transparent, evidence-based financial solutions tailored to your life goals.</p>
+
+  <!-- Features -->
+  <div class="whyus-row">
+    <div class="whyus-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Tailored Wealth Growth</h3>
+      <p>Your wealth strategy is uniquely built for you — designed for consistent and sustainable growth.</p>
+    </div>
+
+    <div class="whyus-card">
+      <i class="fas fa-user-tie"></i>
+      <h3>Trusted Financial Experts</h3>
+      <p>Our advisors blend deep expertise with empathy to help you make confident, informed financial decisions.</p>
+    </div>
+
+    <div class="whyus-card">
+      <i class="fas fa-handshake"></i>
+      <h3>Integrity-Driven Service</h3>
+      <p>We believe in long-term trust — not transactions. Every step we take is guided by your best interest.</p>
+    </div>
+    <div class="whyus-card">
+      <i class="fas fa-chart-pie"></i>
+      <h3>Personalized Financial Strategies</h3>
+      <p>We don't believe in one-size-fits-all plans — every solution is tailored to your goals, lifestyle, and aspirations.
+      </p>
+    </div>
+    
+    <div class="whyus-card">
+      <i class="fas fa-user-shield"></i>
+      <h3>Trusted Expertise</h3>
+      <p>Backed by certified professionals and proven frameworks, we ensure your wealth is protected and positioned for
+        growth.</p>
+    </div>
+
+  </div>
+
+  <!-- Client Reviews -->
+  <div class="reviews-section">
+    <h2>What Our Clients Say</h2>
+    <div class="reviews-slider">
+      <div class="reviews-track">
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
+          <p>"As a busy orthopedic surgeon, Wealth Blue Print manages my finances, saving invaluable time and ensuring
+            clarity."</p>
+          <h4>— Dr. Arjun Mehta</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Client">
+          <p>"Wealth Blue Print simplified my business tax strategy and helped me stay compliant while saving money."
+          </p>
+          <h4>— Priya Sharma</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Client">
+          <p>"Their financial advisors truly care — their personalized approach makes all the difference."</p>
+          <h4>— Rohan Patel</h4>
+          <div class="stars">★★★★☆</div>
+        </div>
+
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+          <p>"Their attention to detail and long-term planning have been a blessing for my family’s security."</p>
+          <h4>— Anjali Verma</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <!-- Duplicate for smooth infinite scroll -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
+          <p>"Wealth Blue Print manages my finances, saving invaluable time and ensuring clarity."</p>
+          <h4>— Dr. Arjun Mehta</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="whyus-cta">
+    <h2>Secure Your Financial Future Today</h2>
+    <p>Get a free consultation with our certified financial experts. Let’s plan your future together!</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="cta-btn primary">Schedule Consultation</a>
+      <a href="contact.html" class="cta-btn secondary">Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🔹 STYLES -->
+<style>
+  .whyus-wrapper {
+    max-width: 1200px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8faff, #eaf3ff);
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .whyus-heading {
+    font-size: 2.5rem;
+    color: #002b5b;
+    margin-bottom: 10px;
+  }
+
+  .whyus-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 50px;
+  }
+
+  .whyus-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .whyus-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    width: 320px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+  }
+
+  .whyus-card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: #fff;
+  }
+
+  .whyus-card i {
+    font-size: 2.5rem;
+    color: #0077b6;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .whyus-card:hover i {
+    color: #fff;
+  }
+
+  .whyus-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .whyus-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* ========== Reviews Section ========== */
+  .reviews-section {
+    margin-top: 80px;
+  }
+
+  .reviews-section h2 {
+    color: #002b5b;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .reviews-slider {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .reviews-track {
+    display: flex;
+    gap: 40px;
+    animation: reviewScroll 25s linear infinite;
+  }
+
+  .review-card {
+    min-width: 300px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    transition: transform 0.4s ease;
+    text-align: center;
+  }
+
+  .review-card:hover {
+    transform: scale(1.05);
+  }
+
+  .review-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #0077b6;
+    margin-bottom: 15px;
+  }
+
+  .review-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .review-card h4 {
+    color: #0077b6;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .stars {
+    color: #ffb400;
+    font-size: 1.2rem;
+  }
+
+  @keyframes reviewScroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ========== CTA ========== */
+  .whyus-cta {
+    margin-top: 100px;
+    background: linear-gradient(90deg, #004aad, #0077b6);
+    color: white;
+    padding: 70px 20px;
+    border-radius: 20px;
+  }
+
+  .whyus-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .whyus-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .cta-btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .cta-btn.primary {
+    background: #fff;
+    color: #004aad;
+  }
+
+  .cta-btn.primary:hover {
+    background: #0077b6;
+    color: #fff;
+  }
+
+  .cta-btn.secondary {
+    border: 2px solid #fff;
+    color: #fff;
+  }
+
+  .cta-btn.secondary:hover {
+    background: #fff;
+    color: #004aad;
+  }
+
+  @media (max-width: 900px) {
+    .whyus-row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .reviews-track {
+      animation-duration: 35s;
+    }
+  }
+</style>
+
+<!-- 🔹 ICONS -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a2e0d6a2ef.js" crossorigin="anonymous"></script>
+
+</main>
+
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="assets/logo.png" alt="Wealth Blue Print logo" class="footer-logo">
+      <h3>Wealth Blue Print</h3>
+      <p>Your trusted partner for financial growth and security.</p>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Right: Address + Socials -->
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <p>123 Finance Street,<br>New Delhi, India - 110001</p>
+
+      <div class="social-icons">
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/twitter--v4.png" alt="twitter--v4" /></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Wealth Blue Print. All rights reserved.
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
 <script src="script.js"></script>
 </body></html>

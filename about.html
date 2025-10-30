@@ -12,9 +12,16 @@
   <div class="container nav-inner">
     <div class="brand">
       <img src="assets/logo.png" alt="Wealth Blue Print logo" class="logo">
-      <span>Wealth Blue Print</span>
+      <span style="color: white;">Wealth Blue Print</span>
     </div>
-    <nav class="nav-links">
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
@@ -23,25 +30,417 @@
     </nav>
   </div>
 </header>
-<main class="container about">
-  <h1>About Wealth Blue Print</h1>
-  <p>At Wealth Blue Print, we’re dedicated to helping you achieve long-term financial clarity and independence. With decades of combined experience, our advisors are passionate about turning your goals into actionable strategies.</p>
-  <h2>Our Values</h2>
-  <ul>
-    <li>Integrity and Transparency</li>
-    <li>Client-Centric Solutions</li>
-    <li>Innovation and Adaptability</li>
-  </ul>
-</main>
-<footer class="footer">
-  <div class="container">
-    <div class="foot-inner">
-      <div>© <span id="year"></span> Wealth Blue Print</div>
-      <div class="foot-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav {
+    background: #1e40af;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .brand img.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #fbbf24;
+  }
+
+  .nav-links .cta {
+    background: #fbbf24;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links .cta:hover {
+    background: #facc15;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: #1e40af;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      display: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+</script>
+
+
+
+<section id="about-section">
+  <div class="since-badge" data-animate>Since July 2016</div>
+
+  <h1 data-animate>About Wealth Blueprint</h1>
+  <p class="intro" data-animate>
+    At <span>Wealth Blueprint</span>, we believe that financial planning is more than just numbers — it’s about securing
+    dreams and
+    building legacies. Since our inception, we’ve helped countless individuals and businesses make smarter, more
+    confident
+    financial decisions that stand the test of time.
+  </p>
+
+  <div class="values" data-animate>
+    <h2>Our Core Values</h2>
+    <ul>
+      <li><i class="fas fa-handshake"></i><br><strong>Integrity</strong><br>We uphold the highest ethical standards in
+        every financial decision.</li>
+      <li><i class="fas fa-chart-line"></i><br><strong>Growth</strong><br>We craft strategies designed to ensure
+        sustainable wealth creation.</li>
+      <li><i class="fas fa-user-shield"></i><br><strong>Trust</strong><br>Your goals are our priority — built on
+        transparency and long-term relationships.</li>
+      
+    </ul>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" data-animate>
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>“As a busy orthopedic surgeon, Wealth Blueprint manages the majority of my finances, freeing up invaluable
+          time and coordinating every aspect of my net worth with ease.”</p>
+        
+      </div>
+
+      <div class="testimonial">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>“As a business owner, Wealth Blueprint has been instrumental in handling my taxes and regulatory formalities
+          — thank you, WB!”</p>
+        
+      </div>
+
+      <div class="testimonial">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>“The time and attention that WB delivers in our tech-driven world is truly legendary, making them highly
+          recommended for anyone seeking real financial expertise.”</p>
+        
       </div>
     </div>
+  </section>
+</section>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Scroll Animation -->
+<script>
+  const elements = document.querySelectorAll("[data-animate]");
+  const revealOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+<style>
+  /* ===== ABOUT SECTION STYLING ===== */
+  #about-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 70px 10%;
+    background: linear-gradient(135deg, #f4f7fb, #e8eef6);
+    color: #1f2937;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #about-section h1 {
+    font-size: 2.5rem;
+    color: #0b2c66;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease;
+  }
+
+  #about-section .intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    color: #374151;
+    font-size: 1.1rem;
+  }
+
+  #about-section .intro span {
+    font-weight: 600;
+    color: #0d47a1;
+  }
+
+  /* ===== Since Badge ===== */
+  .since-badge {
+    background: #0d47a1;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+  }
+
+  .since-badge.visible {
+    transform: scale(1);
+  }
+
+  /* ===== Values Section ===== */
+  #about-section .values h2 {
+    font-size: 1.8rem;
+    color: #0b2c66;
+    margin-bottom: 20px;
+  }
+
+  #about-section .values ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  #about-section .values li {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  #about-section .values li i {
+    color: #0d47a1;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  #about-section .values li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ===== Testimonials Section ===== */
+  #about-section .testimonials {
+    margin-top: 70px;
+  }
+
+  #about-section .testimonials h2 {
+    font-size: 1.9rem;
+    color: #0b2c66;
+    margin-bottom: 40px;
+  }
+
+  #about-section .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  #about-section .testimonial {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #about-section .testimonial:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  #about-section .testimonial p {
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+  }
+
+  #about-section .testimonial span {
+    display: block;
+    margin-top: 15px;
+    color: #0d47a1;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .quote-icon {
+    font-size: 1.5rem;
+    color: #0077ff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.3;
+  }
+
+  /* ===== Animations ===== */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  [data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="assets/logo.png" alt="Wealth Blue Print logo" class="footer-logo">
+      <h3>Wealth Blue Print</h3>
+      <p>Your trusted partner for financial growth and security.</p>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacypolicy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Right: Address + Socials -->
+    <div class="footer-right">
+      <h4>Contact Us</h4>
+      <p>123 Finance Street,<br>New Delhi, India - 110001</p>
+
+      <div class="social-icons">
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/facebook-new.png"
+            alt="facebook-new" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/linkedin.png"
+            alt="linkedin" /></i></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/color/48/twitter--v4.png"
+            alt="twitter--v4" /></a>
+        <a href="#"><img width="38" height="38" src="https://img.icons8.com/fluency/48/instagram-new.png"
+            alt="instagram-new" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Wealth Blue Print. All rights reserved.
   </div>
 </footer>
 <script src="script.js"></script>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Planning | Wealth Blueprint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #00ffc3;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+            animation: zoomIn 2s ease;
+        }
+
+        .stat h2 {
+            font-size: 2.5rem;
+            color: #00ffc3;
+        }
+
+        .stat p {
+            color: #ccc;
+        }
+
+        .plans-section {
+            margin-top: 80px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .plans-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #00ffc3;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .plans {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .plan {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            animation: fadeInUp 2s ease;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+            background: rgba(0, 255, 195, 0.15);
+        }
+
+        .plan h3 {
+            font-size: 1.5rem;
+            color: #00ffc3;
+            margin-bottom: 10px;
+        }
+
+        .plan p {
+            font-size: 0.95rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .plan .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin: 60px auto;
+            text-decoration: none;
+            padding: 14px 28px;
+            background: #00ffc3;
+            color: #0f2027;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 0 15px #00ffc3;
+            transition: all 0.3s ease;
+            animation: fadeInUp 2s ease;
+        }
+
+        .back-btn:hover {
+            background: #00bfa6;
+            box-shadow: 0 0 25px #00ffc3;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            color: #ccc;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Smart Financial Planning for a Secure Future</h1>
+        <p>Take control of your finances with our expert-guided financial planning solutions designed to help you save
+            smarter, invest better, and achieve long-term wealth stability.</p>
+
+        <div class="stats">
+            <div class="stat">
+                <h2 id="savings">0</h2>
+                <p>Average Client Savings</p>
+            </div>
+            <div class="stat">
+                <h2 id="clients">0</h2>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat">
+                <h2 id="growth">0%</h2>
+                <p>Annual Growth</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="plans-section">
+        <h2>Choose Your Financial Plan</h2>
+        <div class="plans">
+            <div class="plan">
+                <h3>Starter Plan</h3>
+                <p>Perfect for beginners looking to start budgeting and saving efficiently.</p>
+                <p class="price">₹999/month</p>
+            </div>
+
+            <div class="plan">
+                <h3>Premium Plan</h3>
+                <p>Ideal for professionals seeking expert guidance in investments and taxes.</p>
+                <p class="price">₹2,499/month</p>
+            </div>
+
+            <div class="plan">
+                <h3>Elite Plan</h3>
+                <p>Comprehensive wealth management with personal financial advisor access.</p>
+                <p class="price">₹4,999/month</p>
+            </div>
+        </div>
+
+        <a href="../services.html" class="back-btn">← Back to Services</a>
+    </section>
+
+    <footer>
+        © 2025 Wealth Blueprint | All Rights Reserved
+    </footer>
+
+    <script>
+        // Animated Counters
+        function animateValue(id, start, end, duration, suffix = "") {
+            let obj = document.getElementById(id);
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                let progress = Math.min((timestamp - startTime) / duration, 1);
+                obj.innerText = Math.floor(progress * (end - start) + start) + suffix;
+                if (progress < 1) window.requestAnimationFrame(step);
+            }
+
+            window.requestAnimationFrame(step);
+        }
+
+        animateValue("savings", 0, 250000, 2000, "₹");
+        animateValue("clients", 0, 1200, 2500, "+");
+        animateValue("growth", 0, 18, 2000, "%");
+    </script>
+</body>
+
+</html>

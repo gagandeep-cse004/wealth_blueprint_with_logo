@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Planning | Wealth Blueprint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f6f9fc, #eef3f7);
+            color: #333;
+            overflow-x: hidden;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #1a1a40;
+            margin-bottom: 10px;
+            animation: slideDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .plans-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 10%;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-card img {
+            width: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .plan-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .plan-card h3 {
+            font-size: 1.4rem;
+            color: #1a1a40;
+            margin-bottom: 10px;
+        }
+
+        .plan-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #0077b6;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 12px 24px;
+            background: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #023e8a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a1a40;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Smart Tax Planning</h1>
+        <p>
+            Stay ahead of the financial year with our <span class="highlight">expert-led tax planning strategies</span>.
+            Learn how to save more, invest wisely, and grow your wealth while staying compliant.
+        </p>
+    </header>
+
+    <section class="plans-section">
+        <div class="plan-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4221/4221393.png" alt="Basic Tax Plan">
+            <h3>Basic Tax Optimization</h3>
+            <p>Ideal for individuals looking to reduce annual tax liabilities through Section 80C and 80D benefits,
+                insurance, and investment-based savings.</p>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4221/4221425.png" alt="Advanced Plan">
+            <h3>Advanced Tax Strategy</h3>
+            <p>Perfect for business owners and professionals. Optimize deductions, capital gains, and profit
+                reinvestments for maximum efficiency.</p>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4221/4221458.png" alt="Corporate Tax">
+            <h3>Corporate Tax Advisory</h3>
+            <p>Comprehensive corporate tax planning solutions to minimize liabilities and boost post-tax profitability
+                through expert guidance.</p>
+        </div>
+
+        <div class="plan-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4221/4221433.png" alt="NRI Plan">
+            <h3>NRI Tax Planning</h3>
+            <p>Tailored tax assistance for Non-Resident Indians (NRIs) including double taxation avoidance, foreign
+                income management, and investment planning.</p>
+        </div>
+    </section>
+
+    <button class="back-btn" onclick="window.location.href='services.html'">← Back to Services</button>
+
+    <footer>
+        © 2025 Wealth Blueprint | Crafted for smarter financial living
+    </footer>
+
+</body>
+
+</html>
